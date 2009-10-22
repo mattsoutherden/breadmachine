@@ -1,0 +1,62 @@
+= breadmachine
+
+Note the version number and consider very carefully whether you really need to
+use this code.
+
+Make dough with BreadMachine, a ruby interface for the SecureTrading XPay gateway.
+
+Should work with XPay v3.51 and v4.0.
+
+== Installation
+
+Until we get a config file going, make an initializer called breadmachine.rb
+in config/initializers, and stick the following into it:
+
+    BreadMachine::SecureTrading.configure do |config|
+      config.currency = 'GBP'
+      config.site_reference = 'yourxpaysitereference'
+      config.term_url = 'http://www.foo.com/your_callback_url'
+      config.merchant_name = "Hubbub"
+    end
+
+# TODO: check to see that this is absolutely true wrt currency
+config.currency: the standard ISO reference for your currency
+
+config.site_reference: provided to you by SecureTrading
+
+config.term_url: the resource that your ACS will post back to after a 3-D
+Secure authentication check.  If you decide to append any parameters to this
+when your callback executes (i.e. http://www.foo.com/your_callback_url/123-ordernumber)
+then remember to include a trailing slash on it - BreadMachine will just concatenate
+the values together.
+
+config.merchant_name: provided by SecureTrading
+
+== Glossary
+
+The terminology surrounding credit card payment systems is arcane and can cause
+a lot of confusion.  Here are some terms you might need to be familiar with:
+
+=== 3-D Secure
+
+The glorious credit card fraud prevention scheme beloved by web developers everywhere.
+
+=== 3-D Secure ACS
+
+This is the 3-D Secure Access Control Server, i.e. the 3-D Secure "verified by visa/mastercard" password page which you redirect your users to.
+
+== Note on Patches/Pull Requests
+
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but
+  bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+== Copyright
+
+Copyright (c) 2009 Matt Southerden, Dave Hrycyszyn. See LICENSE for details.
+
