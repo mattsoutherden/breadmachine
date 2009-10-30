@@ -28,13 +28,8 @@ module BreadMachine
       protected
       
       def generate_xml(request)
-        xml = Builder::XmlMarkup.new(:indent => 2)
-        xml.instruct!
-        xml.RequestBlock('Version' => '3.51') do |request_block|
-          request_block << request.to_xml
-          xml.Certificate BreadMachine::SecureTrading::configuration.site_reference
-        end
-        return xml.to_s
+        request = BreadMachine::SecureTrading::Request.new(request)
+        request.to_xml
       end
       
       def exchange_with_xpay_client(request_xml)

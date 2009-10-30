@@ -22,6 +22,8 @@ module BreadMachine
     autoload :St3dAuthRequest, 'breadmachine/secure_trading/st_3d_auth_request'
     autoload :St3dAuthResponse, 'breadmachine/secure_trading/st_3d_auth_response'
     
+    autoload :Request, 'breadmachine/secure_trading/request'
+    
     autoload :AuthRequest, 'breadmachine/secure_trading/auth_request'
     autoload :MotoAuthRequest, 'breadmachine/secure_trading/moto_auth_request'
 
