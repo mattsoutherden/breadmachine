@@ -8,19 +8,11 @@ module BreadMachine
         return SecureTrading::XPay.exchange(request)
       end
 
-      def repeat_auth(*args)
-        auth(*args)
-      end
-      
       def moto_auth(*args)
         request = SecureTrading::MotoAuthRequest.new(*args)
         return SecureTrading::XPay.exchange(request)
       end
       
-      def repeat_moto_auth(*args)
-        moto_auth(*args)
-      end
-
       # Checks to see whether a card is enrolled in 3-D Secure. Returns a
       # ST3DCardQueryResponse which can tell us whether the card is enrolled
       # and what kind of authorisation to perform.

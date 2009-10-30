@@ -120,7 +120,7 @@ When /^I submit a repeat auth$/ do
     :transaction_reference  => response.transaction_reference
   )
   
-  self.response = BreadMachine.repeat_auth(amount, card, customer, order, settle_day = 0)
+  self.response = BreadMachine.auth(amount, card, customer, order, settle_day = 0)
 end
 
 When /^I submit a repeat MOTO auth$/ do
@@ -132,7 +132,7 @@ When /^I submit a repeat MOTO auth$/ do
     :transaction_reference  => response.transaction_reference
   )
   
-  self.response = BreadMachine.repeat_moto_auth(amount, card, customer, order, settle_day = 0)
+  self.response = BreadMachine.moto_auth(amount, card, customer, order, settle_day = 0)
 end
 
 
