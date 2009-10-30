@@ -114,11 +114,11 @@ module BreadMachine
         if response.error?
           message = response.message
           case message.match(/\((\d+)\)/)[1].to_i
-            when 100, 101, 1000, 1100, 3000, 3010, 3330, 3350, 5000:
+            when 100, 101, 1000, 1100, 3000, 3010, 3330, 3350, 5000 then
               raise BreadMachine::GatewayConnectionError.new(message)
-            when 2100, 3100:
+            when 2100, 3100 then
               raise BreadMachine::MerchantConfigurationError.new(message)
-            when 2500, 5100, 10500:
+            when 2500, 5100, 10500 then
               raise BreadMachine::MerchantRequestError.new(message)
           end
         end
