@@ -1,0 +1,7 @@
+== v0.0.3 - 2009-10-31
+
+CI for the project can be found at: http://runcoderun.com/mattsoutherden/breadmachine
+and is running for Ruby 1.8.6 and 1.9.1
+
+=== New features
+ * Ruby 1.9 compatibility
