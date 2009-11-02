@@ -1,36 +1,30 @@
-= breadmachine
+= BreadMachine
 
-Note the version number and consider very carefully whether you really need to
-use this code.
-
-Make dough with BreadMachine, a ruby interface for the SecureTrading XPay gateway.
-
-Should work with XPay v3.51 and v4.0.
+Make dough with BreadMachine, a ruby interface for the SecureTrading[http://securetrading.com/] XPay[http://securetrading.com/support/xpay.html] gateway.
 
 == Installation
 
-Until we get a config file going, make an initializer called breadmachine.rb
-in config/initializers, and stick the following into it:
+    gem install breadmachine
+
+Configure BreadMachine with your SecureTrading merchant account settings.
 
     BreadMachine::SecureTrading.configure do |config|
       config.currency = 'GBP'
-      config.site_reference = 'yourxpaysitereference'
-      config.term_url = 'http://www.foo.com/your_callback_url'
-      config.merchant_name = "Hubbub"
+      config.site_reference = 'site12345'
+      config.term_url = 'http://www.example.com/callback_url'
+      config.merchant_name = "Dr Widgopolis' Widget Factory"
     end
 
-# TODO: check to see that this is absolutely true wrt currency
-config.currency: the standard ISO reference for your currency
+* currency: The standard ISO reference for the currency your merchant account.
+* site_reference: Provided to you by SecureTrading.
+* term_url: the URL that the user's ACS will post back to after a 3-D Secure authentication check.
+* merchant_name: The merchant name displayed to the user when authenticating with their ACS.
 
-config.site_reference: provided to you by SecureTrading
+If you're using Rails, you can place your test account settings in config/development.rb and live settings in config/production.rb
 
-config.term_url: the resource that your ACS will post back to after a 3-D
-Secure authentication check.  If you decide to append any parameters to this
-when your callback executes (i.e. http://www.foo.com/your_callback_url/123-ordernumber)
-then remember to include a trailing slash on it - BreadMachine will just concatenate
-the values together.
+== Compatibility
 
-config.merchant_name: provided by SecureTrading
+BreadMachine is targeted at v3.51 of the Xpay API, which is used for Xpay versions 3.51 and 4
 
 == Glossary
 
@@ -39,11 +33,11 @@ a lot of confusion.  Here are some terms you might need to be familiar with:
 
 === 3-D Secure
 
-The glorious credit card fraud prevention scheme beloved by web developers everywhere.
+The glorious credit card fraud prevention scheme incorporating {Verified by Visa}[http://www.visaeurope.com/merchant/handlingvisapayments/cardnotpresent/verifiedbyvisa.jsp] and {MasterCard SecuireCode}[http://www.mastercard.com/us/personal/en/cardholderservices/securecode/index.html].
 
-=== 3-D Secure ACS
+=== ACS
 
-This is the 3-D Secure Access Control Server, i.e. the 3-D Secure "verified by visa/mastercard" password page which you redirect your users to.
+Access Control Server: The 3-D secure authentication server for the user's card issuing bank
 
 == Note on Patches/Pull Requests
 
@@ -56,7 +50,15 @@ This is the 3-D Secure Access Control Server, i.e. the 3-D Secure "verified by v
   bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
+== Contributors
+
+BreadMachine is maintained by Matt Southerden (matt@localbubble.com[mailto:matt@localbubble.com], @mattsoutherden[http://twitter.com/mattsoutherden])
+
+Others who have contributed their time to the project include:
+
+Dave Hrycyszyn[http://github.com/futurechimp]
+
 == Copyright
 
-Copyright (c) 2009 Matt Southerden, Dave Hrycyszyn. See LICENSE for details.
+Copyright (c) 2009 Matt Southerden. See LICENSE for details.
 
