@@ -33,7 +33,7 @@ a lot of confusion.  Here are some terms you might need to be familiar with:
 
 === 3-D Secure
 
-The glorious credit card fraud prevention scheme incorporating {Verified by Visa}[http://www.visaeurope.com/merchant/handlingvisapayments/cardnotpresent/verifiedbyvisa.jsp] and {MasterCard SecuireCode}[http://www.mastercard.com/us/personal/en/cardholderservices/securecode/index.html].
+The glorious credit card fraud prevention scheme incorporating {Verified by Visa}[http://www.visaeurope.com/merchant/handlingvisapayments/cardnotpresent/verifiedbyvisa.jsp] and {MasterCard SecureCode}[http://www.mastercard.com/us/personal/en/cardholderservices/securecode/index.html].
 
 === ACS
 
@@ -52,11 +52,11 @@ Access Control Server: The 3-D secure authentication server for the user's card 
 
 == Contributors
 
-BreadMachine is maintained by Matt Southerden (matt@localbubble.com[mailto:matt@localbubble.com], @mattsoutherden[http://twitter.com/mattsoutherden])
+BreadMachine is maintained by Matt Southerden ({matt@localbubble.com}[mailto:matt@localbubble.com], {@mattsoutherden}[http://twitter.com/mattsoutherden])
 
 Others who have contributed their time to the project include:
 
-Dave Hrycyszyn[http://github.com/futurechimp]
+{Dave Hrycyszyn}[http://github.com/futurechimp]
 
 == Copyright
 
