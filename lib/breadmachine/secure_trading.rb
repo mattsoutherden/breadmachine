@@ -29,6 +29,8 @@ module BreadMachine
 
     autoload :AuthReversalRequest, 'breadmachine/secure_trading/auth_reversal_request'
     autoload :AuthReversalResponse, 'breadmachine/secure_trading/auth_reversal_response'
+    
+    autoload :FakeXpaySocket, 'breadmachine/secure_trading/fake_gateway/fake_xpay_socket'
 
     extend BreadMachine::SecureTrading::Config::ClassMethods
     
