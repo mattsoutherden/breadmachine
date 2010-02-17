@@ -1,7 +1,7 @@
 require 'money'
 require 'nokogiri'
 require 'builder'
-require 'activesupport'
+require 'active_support'
 
 require 'breadmachine/extensions'
 require 'breadmachine/secure_trading'
